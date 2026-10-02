@@ -1,0 +1,532 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+/* =========================
+   COLOR VARIABLES
+========================= */
+:root {
+  --bg: #111820;
+  --bg-dark: #0c1218;
+
+  --mint: #65f5c0;
+  --mint-dark: #39dca2;
+
+  --white: #f5f8f7;
+  --text-muted: #9aa8a7;
+}
+
+/* =========================
+   GENERAL STYLES
+========================= */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  min-height: 100vh;
+  color: var(--white);
+  line-height: 1.6;
+
+  background:
+    radial-gradient(circle at 50% 48%,
+      rgba(50, 229, 170, 0.13),
+      transparent 24%),
+    linear-gradient(145deg,
+      #10171e,
+      #17131d 72%,
+      #0d141a);
+}
+
+/* Soft background lighting */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+
+  background:
+    radial-gradient(circle at 25% 70%,
+      rgba(57, 220, 162, 0.05),
+      transparent 30%),
+    radial-gradient(circle at 85% 30%,
+      rgba(121, 73, 160, 0.06),
+      transparent 28%);
+}
+
+/* =========================
+   NAVIGATION BAR
+========================= */
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+
+  height: 70px;
+  padding: 0 7%;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  z-index: 20;
+
+  background: rgba(10, 15, 20, 0.65);
+  backdrop-filter: blur(10px);
+
+  border-bottom: 1px solid rgba(101, 245, 192, 0.07);
+}
+
+/* Logo */
+.brand {
+  font-size: 1.35rem;
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+
+.brand span {
+  color: var(--mint);
+}
+
+/* Navigation links */
+nav {
+  display: flex;
+  gap: 2rem;
+}
+
+nav a {
+  color: #b7c2c1;
+  text-decoration: none;
+  font-size: 0.9rem;
+
+  transition: color 0.3s ease;
+}
+
+nav a:hover,
+nav a.active {
+  color: var(--mint);
+}
+
+/* Mobile menu button */
+.menu {
+  display: none;
+
+  background: none;
+  border: none;
+
+  color: white;
+  font-size: 1.5rem;
+
+  cursor: pointer;
+}
+
+/* =========================
+   HOME SECTION
+========================= */
+.home {
+  padding-top: 70px;
+}
+
+/* Main hero area */
+.hero {
+  min-height: calc(100vh - 70px);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  position: relative;
+  overflow: hidden;
+
+  text-align: center;
+  padding: 4rem 1.5rem;
+}
+
+/* =========================
+   NAME
+========================= */
+.name {
+  z-index: 2;
+  margin-bottom: 1.1rem;
+}
+
+.name h1 {
+  font-size: clamp(3.1rem, 8vw, 6.5rem);
+  font-weight: 800;
+
+  line-height: 0.88;
+  letter-spacing: -3px;
+
+  text-shadow: 0 0 25px rgba(255, 255, 255, 0.08);
+}
+
+.name h1:nth-child(2) {
+  color: var(--white);
+}
+
+.name h1 span {
+  color: var(--mint);
+
+  text-shadow:
+    0 0 24px rgba(101, 245, 192, 0.25);
+}
+
+/* =========================
+   PROFILE IMAGE
+========================= */
+.portrait-area {
+  width: 330px;
+  height: 330px;
+
+  position: relative;
+
+  display: grid;
+  place-items: center;
+
+  margin: 0.8rem 0;
+}
+
+/* Green glow behind the image */
+.glow {
+  position: absolute;
+
+  width: 260px;
+  height: 260px;
+
+  border-radius: 50%;
+
+  background: var(--mint);
+
+  filter: blur(65px);
+  opacity: 0.2;
+
+  animation: pulse 3s ease-in-out infinite;
+}
+
+/* Decorative rings around the profile */
+.orbit {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.orbit-one {
+  width: 258px;
+  height: 258px;
+  border: 2px solid rgba(101, 245, 192, 0.5);
+}
+
+.orbit-two {
+  width: 268px;
+  height: 268px;
+  border: 1px solid rgba(101, 245, 192, 0.3);
+  transform: rotate(25deg);
+}
+
+/* Profile picture */
+.portrait {
+  width: 260px;
+  height: 260px;
+
+  padding: 7px;
+
+  position: relative;
+  z-index: 2;
+
+  border-radius: 50%;
+
+  background: linear-gradient(135deg,
+      #75ffd0,
+      #32cfa0);
+
+  box-shadow:
+    0 0 25px rgba(101, 245, 192, 0.3),
+    0 0 70px rgba(101, 245, 192, 0.13);
+}
+
+.portrait img,
+.initials {
+  width: 100%;
+  height: 100%;
+
+  border-radius: 50%;
+
+  object-fit: cover;
+  background: #202a30;
+}
+
+/* Initials shown when no profile image exists */
+.initials {
+  display: none;
+
+  place-items: center;
+
+  color: var(--mint);
+  font-size: 4rem;
+  font-weight: 800;
+}
+
+/* =========================
+   PROFILE RING
+========================= */
+.profile-ring {
+  position: absolute;
+  inset: -10px;
+
+  border: 1px solid rgba(93, 242, 173, 0.35);
+  border-radius: 50%;
+
+  animation: spin 12s linear infinite;
+}
+
+
+/* Small glowing dot around the ring */
+.profile-ring::after {
+  content: "";
+
+  position: absolute;
+
+  width: 7px;
+  height: 7px;
+
+  top: 15px;
+  right: 25px;
+
+  background: var(--mint);
+
+  border-radius: 50%;
+
+  box-shadow:
+    0 0 15px var(--mint);
+}
+
+/* =========================
+   JOB TITLE
+========================= */
+.role {
+  margin: 0.8rem 0;
+
+  color: #e9eeee;
+
+  font-size: 1.35rem;
+  font-weight: 600;
+  font-style: italic;
+
+  text-shadow:
+    0 0 14px rgba(255, 255, 255, 0.1);
+}
+
+/* Introduction text */
+.intro {
+  max-width: 620px;
+
+  color: var(--text-muted);
+
+  font-size: 0.95rem;
+}
+
+/* =========================
+   MAIN BUTTON
+========================= */
+.hero-btn {
+  margin-top: 1.6rem;
+
+  padding: 0.9rem 1.7rem;
+
+  display: inline-block;
+
+  border-radius: 50px;
+
+  background: linear-gradient(135deg,
+      #b8ffe4,
+      #65f5c0);
+
+  color: #123029;
+
+  text-decoration: none;
+  font-weight: 600;
+
+  box-shadow:
+    0 0 25px rgba(101, 245, 192, 0.18);
+
+  transition: 0.35s ease;
+}
+
+.hero-btn span {
+  margin-left: 0.5rem;
+  font-size: 1.3rem;
+}
+
+.hero-btn:hover {
+  transform: translateY(-4px);
+
+  box-shadow:
+    0 0 35px rgba(101, 245, 192, 0.32);
+}
+
+/* =========================
+   ABOUT PREVIEW
+========================= */
+.home-about {
+  max-width: 800px;
+
+  margin: 0 auto;
+  padding: 6rem 2rem;
+
+  text-align: center;
+}
+
+.label {
+  color: var(--mint);
+
+  font-size: 0.7rem;
+  font-weight: 700;
+
+  letter-spacing: 3px;
+}
+
+.home-about h2 {
+  margin: 0.7rem 0;
+
+  font-size: 2.4rem;
+}
+
+.home-about h2 span {
+  color: var(--mint);
+}
+
+.home-about p:last-child {
+  color: var(--text-muted);
+}
+
+/* =========================
+   FOOTER
+========================= */
+footer {
+  padding: 1.8rem;
+
+  text-align: center;
+
+  color: #697675;
+
+  font-size: 0.8rem;
+
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+/* =========================
+   ANIMATIONS
+========================= */
+.reveal {
+  opacity: 0;
+
+  transform: translateY(18px);
+
+  animation:
+    appear 0.9s ease forwards;
+}
+
+.reveal:nth-child(2) {
+  animation-delay: 0.12s;
+}
+
+.reveal:nth-child(3) {
+  animation-delay: 0.22s;
+}
+
+.reveal:nth-child(4) {
+  animation-delay: 0.32s;
+}
+
+.reveal:nth-child(5) {
+  animation-delay: 0.42s;
+}
+
+@keyframes appear {
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes pulse {
+  50% {
+    transform: scale(1.08);
+    opacity: 0.28;
+  }
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* =========================
+   MOBILE DESIGN
+========================= */
+@media (max-width: 700px) {
+
+  .nav {
+    padding: 0 5%;
+  }
+
+  .menu {
+    display: block;
+  }
+
+  nav {
+    display: none;
+
+    position: absolute;
+    top: 70px;
+    left: 0;
+    right: 0;
+
+    flex-direction: column;
+    gap: 0;
+
+    padding: 1rem 7%;
+
+    background: #10171e;
+
+    border-bottom:
+      1px solid rgba(101, 245, 192, 0.1);
+  }
+
+  nav.open {
+    display: flex;
+  }
+
+  nav a {
+    padding: 0.7rem 0;
+  }
+
+  .name h1 {
+    font-size: 3.4rem;
+  }
+
+  .portrait-area {
+    transform: scale(0.82);
+    margin: -0.4rem 0;
+  }
+
+  .intro {
+    font-size: 0.88rem;
+  }
+
+  .home-about h2 {
+    font-size: 1.8rem;
+  }
+}

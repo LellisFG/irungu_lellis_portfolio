@@ -1,6 +1,212 @@
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Space+Grotesk:wght@500;600;700&display=swap');
-:root{--bg:#07110f;--card:#0d1b18;--text:#eef8f3;--muted:#a6bbb2;--accent:#5df2ad}
-*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font-family:'DM Sans',sans-serif}.navbar{height:82px;display:flex;align-items:center;justify-content:space-between;padding:0 7%;border-bottom:1px solid rgba(255,255,255,.06)}.brand{font:700 25px 'Space Grotesk';color:white;text-decoration:none}.brand span,h1 span,h2 span{color:var(--accent)}nav{display:flex;gap:34px}nav a{color:var(--muted);text-decoration:none;font-size:14px}nav a:hover,nav a.active{color:var(--accent)}
-.page{max-width:1120px;margin:auto;padding:100px 7%}.intro{max-width:820px;margin-bottom:65px}.eyebrow{color:var(--accent);font-size:11px;font-weight:700;letter-spacing:3px}.intro h1{font:700 clamp(52px,8vw,90px)/.95 'Space Grotesk';letter-spacing:-5px;margin:18px 0}.lead{color:var(--muted);font-size:20px;line-height:1.65;max-width:680px}
-.grid{display:grid;grid-template-columns:1.2fr .8fr;gap:20px}.card{background:linear-gradient(145deg,#10201c,#0b1714);border:1px solid rgba(255,255,255,.07);border-radius:24px;padding:38px;position:relative;overflow:hidden}.card:after{content:"";position:absolute;width:150px;height:150px;border-radius:50%;background:rgba(93,242,173,.06);filter:blur(30px);right:-50px;top:-50px}.academic{grid-row:span 2}.number{color:#50675e;font:700 12px 'Space Grotesk'}.card h2{font:700 37px/1.05 'Space Grotesk';letter-spacing:-2px;margin:25px 0}.card p{color:var(--muted);line-height:1.8;font-size:16px}.skill-list{display:flex;flex-wrap:wrap;gap:10px}.skill-list span{padding:10px 13px;border:1px solid rgba(93,242,173,.18);border-radius:30px;color:#cce2d8;font-size:13px}.skill-list span:nth-child(-n+4){background:rgba(93,242,173,.08);color:var(--accent)}.hobbies{display:grid;gap:15px}.hobbies div{padding:14px;border-bottom:1px solid rgba(255,255,255,.06);color:#bcd0c7}.hobbies div:first-letter{color:var(--accent)}footer{text-align:center;padding:28px 7%;border-top:1px solid rgba(255,255,255,.07);color:#637770;font-size:12px}
-@media(max-width:750px){nav{gap:13px}nav a{font-size:11px}.grid{grid-template-columns:1fr}.academic{grid-row:auto}.page{padding-top:70px}.intro h1{letter-spacing:-3px}}
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+:root {
+  --bg: #111820;
+  --mint: #65f5c0;
+  --white: #f5f8f7;
+  --muted: #9aa8a7;
+  --card: rgba(24, 33, 39, .78)
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0
+}
+
+body {
+  font-family: Poppins, sans-serif;
+  background: radial-gradient(circle at 50% 30%, rgba(52, 230, 170, .08), transparent 28%), linear-gradient(145deg, #10171e, #17131d);
+  color: var(--white);
+  min-height: 100vh
+}
+
+.nav {
+  height: 70px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 10;
+  padding: 0 7%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: rgba(10, 15, 20, .72);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(101, 245, 192, .07)
+}
+
+.brand {
+  font-weight: 800;
+  letter-spacing: 2px
+}
+
+.brand span,
+.heading h1 span {
+  color: var(--mint)
+}
+
+nav {
+  display: flex;
+  gap: 2rem
+}
+
+nav a {
+  color: #b7c2c1;
+  text-decoration: none;
+  font-size: .9rem
+}
+
+nav a:hover,
+nav a.active {
+  color: var(--mint)
+}
+
+.menu {
+  display: none;
+  background: none;
+  border: 0;
+  color: #fff;
+  font-size: 1.5rem
+}
+
+.page {
+  padding: 140px 8% 70px;
+  min-height: calc(100vh - 70px)
+}
+
+.heading {
+  text-align: center;
+  margin-bottom: 4rem
+}
+
+.heading p {
+  font-size: .7rem;
+  letter-spacing: 3px;
+  color: var(--mint);
+  font-weight: 700
+}
+
+.heading h1 {
+  font-size: 3.4rem;
+  margin: .4rem 0
+}
+
+.line {
+  width: 65px;
+  height: 2px;
+  background: var(--mint);
+  margin: auto;
+  box-shadow: 0 0 12px var(--mint)
+}
+
+.grid {
+  max-width: 1050px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 1.35fr .8fr;
+  gap: 1.5rem
+}
+
+.card {
+  background: var(--card);
+  border: 1px solid rgba(101, 245, 192, .12);
+  border-radius: 22px;
+  padding: 2.5rem;
+  box-shadow: 0 18px 50px rgba(0, 0, 0, .18);
+  transition: .3s
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(101, 245, 192, .42)
+}
+
+.symbol {
+  color: var(--mint);
+  font-family: monospace;
+  font-weight: 700;
+  font-size: 1.1rem;
+  margin-bottom: 1.5rem
+}
+
+.card h2 {
+  font-size: 1.55rem;
+  margin-bottom: 1rem
+}
+
+.card p,
+.card li {
+  color: var(--muted)
+}
+
+ul {
+  list-style: none;
+  display: grid;
+  gap: .7rem
+}
+
+li:before {
+  content: '✦';
+  color: var(--mint);
+  margin-right: .7rem
+}
+
+footer {
+  text-align: center;
+  color: #697675;
+  padding: 1.8rem;
+  border-top: 1px solid rgba(255, 255, 255, .06);
+  font-size: .8rem
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(18px);
+  animation: show .8s forwards
+}
+
+@keyframes show {
+  to {
+    opacity: 1;
+    transform: none
+  }
+}
+
+@media(max-width:750px) {
+  .nav {
+    padding: 0 5%
+  }
+
+  .menu {
+    display: block
+  }
+
+  nav {
+    display: none;
+    position: absolute;
+    top: 70px;
+    left: 0;
+    right: 0;
+    background: #10171e;
+    flex-direction: column;
+    padding: 1rem 7%
+  }
+
+  nav.open {
+    display: flex
+  }
+
+  .page {
+    padding: 120px 6% 50px
+  }
+
+  .heading h1 {
+    font-size: 2.5rem
+  }
+
+  .grid {
+    grid-template-columns: 1fr
+  }
+}

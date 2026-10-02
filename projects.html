@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>Projects | Irungu Lellis Gaiti</title>
+  <link rel="stylesheet" href="projects.css">
+</head>
+
+<body>
+  <header class="nav">
+    <div class="brand">ILG<span>.</span></div><button class="menu">☰</button>
+    <nav><a href="index.html">Home</a><a href="about.html">About</a><a class="active"
+        href="projects.html">Projects</a><a href="contact.html">Contact</a></nav>
+  </header>
+  <main class="page">
+    <section class="heading reveal">
+      <p>MY WORK & ABILITIES</p>
+      <h1>Skills & <span>Projects</span></h1>
+      <div class="line"></div>
+    </section>
+    <section class="section reveal">
+      <h2>Skills</h2>
+      <div class="skills">
+        <div><label>Problem-solving and Debugging <b>90%</b></label><i><em style="width:90%"></em></i></div>
+        <div><label>Communication skills <b>85%</b></label><i><em style="width:85%"></em></i></div>
+        <div><label>Leadership <b>80%</b></label><i><em style="width:80%"></em></i></div>
+        <div><label>Excel skills <b>85%</b></label><i><em style="width:85%"></em></i></div>
+        <div><label>Adaptability <b>90%</b></label><i><em style="width:90%"></em></i></div>
+        <div><label>Time management <b>85%</b></label><i><em style="width:85%"></em></i></div>
+      </div>
+    </section>
+    <section class="section reveal">
+      <h2>Projects</h2>
+      <p class="hint">Select a project to view its details.</p>
+      <div class="projects">
+        <article onclick="toggleProject(this)">
+          <header><span>01</span>
+            <h3>Sales</h3><b>+</b>
+          </header>
+          <div class="details">A management project where items are recorded in a relevant shop, showing the amount in
+            stock and alerting the user when stock is about to deplete.<strong>Coming Soon</strong></div>
+        </article>
+        <article onclick="toggleProject(this)">
+          <header><span>02</span>
+            <h3>School Learning System</h3><b>+</b>
+          </header>
+          <div class="details">A system where a student logs in and accesses their timetable, stream, relevant teacher
+            and classroom information.<strong>Coming Soon</strong></div>
+        </article>
+        <article onclick="toggleProject(this)">
+          <header><span>03</span>
+            <h3>Daktari Hub</h3><b>+</b>
+          </header>
+          <div class="details">A healthcare platform where a patient books an appointment with a doctor and views the
+            doctor's details and qualifications.<strong>Coming Soon</strong></div>
+        </article>
+        <article onclick="toggleProject(this)">
+          <header><span>04</span>
+            <h3>Nyumbani</h3><b>+</b>
+          </header>
+          <div class="details">A home management system controlling appliances such as thermostats and lighting
+            according to the environment.<strong>Coming Soon</strong></div>
+        </article>
+      </div>
+    </section>
+    <section class="section services reveal">
+      <h2>Services</h2>
+      <div class="service-grid"><span>Web design</span><span>Computer applications tutoring</span><span>System
+          debugging</span><span>Visual Basic programming</span></div>
+    </section>
+  </main>
+  <footer>© 2026 Irungu Lellis Gaiti</footer>
+  <script src="site.js"></script>
+  <script>function toggleProject(x) { x.classList.toggle('open') }</script>
+</body>
+
+</html>
