@@ -5,20 +5,24 @@
   --mint: #65f5c0;
   --white: #f5f8f7;
   --muted: #9aa8a7;
-  --card: rgba(24, 33, 39, .78)
+  --card: rgba(24, 33, 39, .78);
 }
 
 * {
   box-sizing: border-box;
   margin: 0;
-  padding: 0
+  padding: 0;
 }
 
 body {
   font-family: Poppins, sans-serif;
-  background: radial-gradient(circle at 50% 30%, rgba(52, 230, 170, .08), transparent 28%), linear-gradient(145deg, #10171e, #17131d);
+  background:
+    radial-gradient(circle at 50% 30%,
+      rgba(52, 230, 170, .08),
+      transparent 28%),
+    linear-gradient(145deg, #10171e, #17131d);
   color: var(--white);
-  min-height: 100vh
+  min-height: 100vh;
 }
 
 .nav {
@@ -34,33 +38,34 @@ body {
   justify-content: space-between;
   background: rgba(10, 15, 20, .72);
   backdrop-filter: blur(10px);
-  border-bottom: 1px solid rgba(101, 245, 192, .07)
+  border-bottom: 1px solid rgba(101, 245, 192, .07);
 }
 
 .brand {
   font-weight: 800;
-  letter-spacing: 2px
+  letter-spacing: 2px;
 }
 
 .brand span,
 .heading h1 span {
-  color: var(--mint)
+  color: var(--mint);
 }
 
 nav {
   display: flex;
-  gap: 2rem
+  gap: 2rem;
 }
 
 nav a {
   color: #b7c2c1;
   text-decoration: none;
-  font-size: .9rem
+  font-size: .9rem;
+  transition: color .3s ease;
 }
 
 nav a:hover,
 nav a.active {
-  color: var(--mint)
+  color: var(--mint);
 }
 
 .menu {
@@ -68,29 +73,30 @@ nav a.active {
   background: none;
   border: 0;
   color: #fff;
-  font-size: 1.5rem
+  font-size: 1.5rem;
+  cursor: pointer;
 }
 
 .page {
   padding: 140px 8% 70px;
-  min-height: calc(100vh - 70px)
+  min-height: calc(100vh - 70px);
 }
 
 .heading {
   text-align: center;
-  margin-bottom: 4rem
+  margin-bottom: 4rem;
 }
 
 .heading p {
   font-size: .7rem;
   letter-spacing: 3px;
   color: var(--mint);
-  font-weight: 700
+  font-weight: 700;
 }
 
 .heading h1 {
   font-size: 3.4rem;
-  margin: .4rem 0
+  margin: .4rem 0;
 }
 
 .line {
@@ -98,7 +104,7 @@ nav a.active {
   height: 2px;
   background: var(--mint);
   margin: auto;
-  box-shadow: 0 0 12px var(--mint)
+  box-shadow: 0 0 12px var(--mint);
 }
 
 .grid {
@@ -106,7 +112,7 @@ nav a.active {
   margin: auto;
   display: grid;
   grid-template-columns: 1.35fr .8fr;
-  gap: 1.5rem
+  gap: 1.5rem;
 }
 
 .card {
@@ -115,12 +121,12 @@ nav a.active {
   border-radius: 22px;
   padding: 2.5rem;
   box-shadow: 0 18px 50px rgba(0, 0, 0, .18);
-  transition: .3s
+  transition: .3s;
 }
 
 .card:hover {
   transform: translateY(-6px);
-  border-color: rgba(101, 245, 192, .42)
+  border-color: rgba(101, 245, 192, .42);
 }
 
 .symbol {
@@ -128,29 +134,58 @@ nav a.active {
   font-family: monospace;
   font-weight: 700;
   font-size: 1.1rem;
-  margin-bottom: 1.5rem
+  margin-bottom: 1.5rem;
 }
 
 .card h2 {
   font-size: 1.55rem;
-  margin-bottom: 1rem
+  margin-bottom: 1rem;
 }
 
 .card p,
 .card li {
-  color: var(--muted)
+  color: var(--muted);
 }
 
 ul {
   list-style: none;
   display: grid;
-  gap: .7rem
+  gap: .7rem;
+}
+
+li {
+  line-height: 1.5;
 }
 
 li:before {
   content: '✦';
   color: var(--mint);
-  margin-right: .7rem
+  margin-right: .7rem;
+}
+
+/* Skills */
+.card:nth-child(2) ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .65rem;
+}
+
+.card:nth-child(2) li {
+  padding: .55rem .85rem;
+  border: 1px solid rgba(101, 245, 192, .16);
+  border-radius: 30px;
+  font-size: .8rem;
+  transition: .3s ease;
+}
+
+.card:nth-child(2) li:before {
+  display: none;
+}
+
+.card:nth-child(2) li:hover {
+  color: var(--mint);
+  border-color: rgba(101, 245, 192, .45);
+  background: rgba(101, 245, 192, .06);
 }
 
 footer {
@@ -158,29 +193,29 @@ footer {
   color: #697675;
   padding: 1.8rem;
   border-top: 1px solid rgba(255, 255, 255, .06);
-  font-size: .8rem
+  font-size: .8rem;
 }
 
 .reveal {
   opacity: 0;
   transform: translateY(18px);
-  animation: show .8s forwards
+  animation: show .8s forwards;
 }
 
 @keyframes show {
   to {
     opacity: 1;
-    transform: none
+    transform: none;
   }
 }
 
-@media(max-width:750px) {
+@media (max-width: 750px) {
   .nav {
-    padding: 0 5%
+    padding: 0 5%;
   }
 
   .menu {
-    display: block
+    display: block;
   }
 
   nav {
@@ -191,22 +226,22 @@ footer {
     right: 0;
     background: #10171e;
     flex-direction: column;
-    padding: 1rem 7%
+    padding: 1rem 7%;
   }
 
   nav.open {
-    display: flex
+    display: flex;
   }
 
   .page {
-    padding: 120px 6% 50px
+    padding: 120px 6% 50px;
   }
 
   .heading h1 {
-    font-size: 2.5rem
+    font-size: 2.5rem;
   }
 
   .grid {
-    grid-template-columns: 1fr
+    grid-template-columns: 1fr;
   }
 }

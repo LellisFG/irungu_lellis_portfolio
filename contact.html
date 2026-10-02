@@ -3,40 +3,101 @@
 
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Contact | Irungu Lellis Gaiti</title>
   <link rel="stylesheet" href="contact.css">
 </head>
 
 <body>
+
   <header class="nav">
-    <div class="brand">ILG<span>.</span></div><button class="menu">☰</button>
-    <nav><a href="index.html">Home</a><a href="about.html">About</a><a href="projects.html">Projects</a><a
-        class="active" href="contact.html">Contact</a></nav>
+    <div class="brand">ILG<span>.</span></div>
+
+    <button class="menu">☰</button>
+
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="projects.html">Projects</a>
+      <a class="active" href="contact.html">Contact</a>
+    </nav>
   </header>
+
   <main class="page">
+
     <section class="heading reveal">
       <p>LET'S CONNECT</p>
       <h1>Contact <span>Me</span></h1>
       <div class="line"></div>
     </section>
+
     <section class="contact">
+
       <div class="message reveal">
         <div class="big-symbol">✦</div>
-        <h2>Let's create something <span>amazing.</span></h2>
-        <p>Have an idea, question or project? Send me a message and let's talk about it.</p>
+
+        <h2>
+          Let's create something <span>amazing.</span>
+        </h2>
+
+        <p>
+          Have an idea, question or project?
+          Send me a message and let's talk about it.
+        </p>
+
+        <div class="contact-links">
+
+          <a href="mailto:2607577@students.kcau.ac.ke">
+            <strong>Email</strong>
+            <span>2607577@students.kcau.ac.ke</span>
+          </a>
+
+          <a href="https://github.com/LellisFG" target="_blank" rel="noopener">
+            <strong>GitHub</strong>
+            <span>github.com/LellisFG</span>
+          </a>
+
+        </div>
       </div>
-      <form id="contactForm" class="form reveal" novalidate><label>Name</label><input id="name" type="text"
-          placeholder="Your name"><small id="nameError"></small><label>Email</label><input id="email" type="email"
-          placeholder="your@email.com"><small id="emailError"></small><label>Message</label><textarea id="message"
-          rows="6" placeholder="Write your message..."></textarea><small id="messageError"></small><button
-          type="submit">Send Message <span>→</span></button>
+
+      <form id="contactForm" class="form reveal" novalidate>
+
+        <label for="name">Name</label>
+
+        <input id="name" type="text" placeholder="Your name">
+
+        <small id="nameError"></small>
+
+        <label for="email">Email</label>
+
+        <input id="email" type="email" placeholder="your@email.com">
+
+        <small id="emailError"></small>
+
+        <label for="message">Message</label>
+
+        <textarea id="message" rows="6" placeholder="Write your message..."></textarea>
+
+        <small id="messageError"></small>
+
+        <button type="submit">
+          Send Message <span>→</span>
+        </button>
+
         <p id="success"></p>
+
       </form>
+
     </section>
+
   </main>
-  <footer>© 2026 Irungu Lellis Gaiti</footer>
+
+  <footer>
+    © 2026 Irungu Lellis Gaiti
+  </footer>
+
   <script src="site.js"></script>
+
 </body>
 
 </html>
